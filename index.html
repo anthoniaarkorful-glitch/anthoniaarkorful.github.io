@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthonia Arkorful – Digital Project Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Epilogue:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1916;
+  --cream: #f3f0e8;
+  --warm: #f9f7f2;
+  --accent: #c8652a;
+  --accent2: #e8956a;
+  --muted: #7c7870;
+  --border: #e2ddd4;
+  --card: #ffffff;
+  --dark: #1a1916;
+  --green: #2d6a4f;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Epilogue', sans-serif;
+  background: var(--warm);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 3rem;
+  background: rgba(249,247,242,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem; font-weight: 600;
+  color: var(--ink); text-decoration: none;
+}
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav ul a {
+  text-decoration: none; font-size: 0.76rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); transition: color 0.2s;
+}
+nav ul a:hover { color: var(--accent); }
+
+/* ── HERO ── */
+#home {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 4rem;
+  align-items: center;
+  padding: 9rem 3rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 1.3rem;
+}
+.hero-eyebrow::before { content:''; display:block; width:20px; height:1px; background:var(--accent); }
+h1.hero-h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 700; line-height: 1.06;
+  letter-spacing: -0.02em; color: var(--ink);
+  margin-bottom: 1.6rem;
+}
+h1.hero-h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
+.hero-para {
+  font-size: 1rem; color: var(--muted); line-height: 1.82;
+  font-weight: 300; max-width: 500px; margin-bottom: 2rem;
+}
+.ai-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #f0f7f4; border: 1px solid #b8ddd0;
+  border-radius: 99px; padding: 0.3rem 0.9rem;
+  font-size: 0.76rem; font-weight: 500; color: var(--green);
+  margin-bottom: 2rem;
+}
+.ai-badge::before { content: '✦'; font-size: 0.7rem; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn {
+  text-decoration: none; padding: 0.75rem 1.6rem;
+  border-radius: 4px; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.2s;
+}
+.btn-fill { background: var(--accent); color: white; }
+.btn-fill:hover { background: #b05520; }
+.btn-ghost { border: 1px solid var(--border); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Hero right — photo + social proof */
+.hero-right { display: flex; flex-direction: column; gap: 1rem; }
+.hero-photo-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/4.2;
+  border: 1px solid var(--border);
+  background: #e9e5dc;
+}
+.hero-photo-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 22%;
+  display: block;
+}
+.photo-badge {
+  position: absolute; bottom: 1rem; left: 1rem; right: 1rem;
+  background: rgba(26,25,22,0.82);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  color: white;
+}
+.photo-badge .pb-quote {
+  font-size: 0.82rem; line-height: 1.6; font-weight: 300;
+  font-style: italic; color: rgba(255,255,255,0.88);
+  margin-bottom: 0.4rem;
+}
+.photo-badge .pb-attr {
+  font-size: 0.72rem; font-weight: 600; color: var(--accent2);
+  letter-spacing: 0.04em;
+}
+.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.stat-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 1.2rem 1.3rem;
+  position: relative; overflow: hidden;
+}
+.stat-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: var(--accent);
+}
+.stat-card .sn {
+  font-family: 'Fraunces', serif; font-size: 2.2rem;
+  font-weight: 700; color: var(--ink); line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.stat-card .sl { font-size: 0.78rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+.stat-card.ac { background: var(--accent); }
+.stat-card.ac::before { background: rgba(255,255,255,0.35); }
+.stat-card.ac .sn { color: white; }
+.stat-card.ac .sl { color: rgba(255,255,255,0.78); }
+
+/* ── SHARED ── */
+.wrap { padding: 7rem 3rem; max-width: 1200px; margin: 0 auto; }
+.wrap-bg { padding: 7rem 3rem; }
+.wrap-bg .inner { max-width: 1200px; margin: 0 auto; }
+.eyebrow {
+  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.eyebrow::before { content:''; display:block; width:16px; height:1px; background:var(--accent); }
+h2.sh {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700; line-height: 1.15;
+  letter-spacing: -0.01em; margin-bottom: 0.8rem; color: var(--ink);
+}
+.sub {
+  color: var(--muted); font-size: 0.95rem;
+  line-height: 1.82; font-weight: 300;
+  max-width: 580px; margin-bottom: 3.5rem;
+}
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 5rem; align-items: start;
+}
+.about-body p {
+  font-size: 0.93rem; color: #3a3835;
+  line-height: 1.87; font-weight: 300; margin-bottom: 0.9rem;
+}
+.about-body p strong { font-weight: 600; color: var(--ink); }
+.creds {
+  margin-top: 1.6rem; padding-top: 1.3rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem; color: var(--muted); line-height: 2;
+}
+.creds strong { color: var(--ink); font-weight: 600; }
+.ai-section {
+  background: #f0f7f4; border: 1px solid #b8ddd0;
+  border-radius: 8px; padding: 1.2rem 1.3rem;
+  margin-top: 1.2rem;
+}
+.ai-section .ai-label {
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 700; color: var(--green); margin-bottom: 0.4rem;
+}
+.ai-section p { font-size: 0.84rem; color: #2d4a3e; line-height: 1.7; font-weight: 400 !important; margin: 0 !important; }
+.sg { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.sc {
+  background: white; border: 1px solid var(--border);
+  border-radius: 8px; padding: 1.2rem;
+  transition: box-shadow 0.2s;
+}
+.sc:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.05); }
+.sc .ico { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.sc h4 { font-size: 0.84rem; font-weight: 600; margin-bottom: 0.25rem; }
+.sc p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+/* ── CASE STUDIES ── */
+.case-list { display: flex; flex-direction: column; gap: 1.4rem; }
+.case-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+  transition: box-shadow 0.25s, border-color 0.2s;
+}
+.case-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.07); border-color: #d4cfc8; }
+.case-header {
+  padding: 1.8rem 2rem; cursor: pointer;
+  display: grid; grid-template-columns: 52px 1fr auto;
+  gap: 1.4rem; align-items: center;
+}
+.cnum {
+  font-family: 'Fraunces', serif; font-size: 2.8rem;
+  font-weight: 700; color: var(--border); line-height: 1;
+}
+.ctag {
+  font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin-bottom: 0.3rem;
+}
+.case-header h3 {
+  font-family: 'Fraunces', serif; font-size: 1.4rem;
+  font-weight: 700; color: var(--ink); line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+.case-org { font-size: 0.78rem; color: var(--muted); }
+.case-preview { font-size: 0.83rem; color: var(--muted); font-weight: 300; line-height: 1.65; margin-top: 0.4rem; }
+.ticon {
+  width: 34px; height: 34px; border: 1px solid var(--border);
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-size: 1rem; color: var(--muted);
+  flex-shrink: 0; transition: all 0.2s;
+}
+.case-card.open .ticon { background: var(--accent); color: white; border-color: var(--accent); transform: rotate(45deg); }
+.case-body {
+  display: none; padding: 0 2rem 2rem;
+  border-top: 1px solid var(--border);
+  animation: fadeUp 0.3s ease;
+}
+.case-card.open .case-body { display: block; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+.cbg {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.8rem 3rem; padding-top: 1.8rem;
+}
+.cb h5 {
+  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 700; color: var(--accent); margin-bottom: 0.45rem;
+}
+.cb p, .cb li {
+  font-size: 0.86rem; color: #3a3835; line-height: 1.8; font-weight: 300;
+}
+.cb ul { padding-left: 1rem; }
+.cb li { margin-bottom: 0.2rem; }
+.cb.full { grid-column: 1 / -1; }
+.jbox {
+  background: #fef6f0; border: 1px solid #f0d0b8;
+  border-left: 3px solid var(--accent);
+  border-radius: 6px; padding: 1rem 1.2rem; margin-top: 0.7rem;
+}
+.jbox .jl { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--accent); margin-bottom: 0.3rem; }
+.jbox p { font-size: 0.85rem !important; font-weight: 400 !important; line-height: 1.75 !important; color: #3a3835 !important; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+.chip {
+  background: var(--cream); border: 1px solid var(--border);
+  border-radius: 4px; font-size: 0.74rem;
+  padding: 0.15rem 0.55rem; color: var(--ink);
+}
+.ev-links { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.5rem; }
+.ev-link {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.76rem; font-weight: 600; color: var(--accent);
+  text-decoration: none; padding: 0.35rem 0.85rem;
+  border: 1px solid var(--accent); border-radius: 4px;
+  transition: all 0.2s;
+}
+.ev-link:hover { background: var(--accent); color: white; }
+
+/* ── SOCIAL PROOF STRIP ── */
+.proof-strip {
+  background: var(--dark); padding: 3rem;
+}
+.proof-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+}
+.proof-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 10px; padding: 1.8rem;
+  position: relative;
+}
+.proof-card::before {
+  content: '\201C'; font-family: 'Fraunces', serif;
+  font-size: 3.5rem; color: var(--accent); opacity: 0.3;
+  position: absolute; top: 0.5rem; left: 1.2rem; line-height: 1;
+}
+.proof-card blockquote {
+  font-size: 0.88rem; color: rgba(255,255,255,0.78);
+  line-height: 1.82; font-weight: 300; font-style: italic;
+  padding-top: 1.2rem; margin-bottom: 1.2rem;
+}
+.proof-attr { font-size: 0.78rem; font-weight: 600; color: var(--cream); }
+.proof-attr span { display: block; font-weight: 300; color: rgba(255,255,255,0.5); font-size: 0.74rem; margin-top: 0.1rem; }
+.social-proof-img {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  max-width: 760px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.03);
+}
+.social-proof-img img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.social-proof-img .img-label {
+  background: rgba(200,101,42,0.12); border-top: 1px solid rgba(200,101,42,0.2);
+  padding: 0.6rem 1rem; font-size: 0.74rem; color: var(--accent2); font-weight: 500;
+}
+
+/* ── PROOF GALLERY ── */
+#proof-gallery { background: var(--warm); }
+.proof-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+.proof-shot {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.04);
+}
+.proof-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.proof-shot-body { padding: 1rem 1rem 1.1rem; }
+.proof-shot-body h4 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+}
+.proof-shot-body p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--muted);
+  font-weight: 300;
+}
+.proof-shot-meta {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.proof-cta-row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* ── APPROACH ── */
+#approach { background: var(--cream); }
+.approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+.a-card {
+  background: white; border: 1px solid var(--border);
+  border-radius: 8px; padding: 1.7rem;
+  transition: box-shadow 0.2s;
+}
+.a-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.a-num {
+  font-family: 'Fraunces', serif; font-size: 2.2rem;
+  font-weight: 700; color: var(--accent); opacity: 0.35;
+  line-height: 1; margin-bottom: 0.7rem;
+}
+.a-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--ink); }
+.a-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
+/* ── AI FORWARD SECTION ── */
+#ai-section { background: #0f1f1a; padding: 5rem 3rem; }
+#ai-section .inner { max-width: 1200px; margin: 0 auto; }
+.ai-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+.ai-left .eyebrow { color: #6dbfa0; }
+.ai-left .eyebrow::before { background: #6dbfa0; }
+.ai-left h2.sh { color: #e8f4ef; }
+.ai-left p { color: #8aaa9e; font-size: 0.9rem; line-height: 1.85; font-weight: 300; margin-bottom: 0.9rem; }
+.ai-tools { display: flex; flex-direction: column; gap: 0.7rem; }
+.ai-tool {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 8px; padding: 1rem 1.2rem;
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.ai-tool .at-icon { font-size: 1.3rem; margin-top: 0.1rem; }
+.ai-tool h5 { font-size: 0.85rem; font-weight: 600; color: #e8f4ef; margin-bottom: 0.2rem; }
+.ai-tool p { font-size: 0.8rem; color: #7a9e92; line-height: 1.65; font-weight: 300; }
+
+/* ── TOOLS ── */
+#tools { background: var(--warm); }
+.tool-cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.tc { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; }
+.tc h5 { font-size: 0.67rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 0.6rem; }
+.tc ul { list-style: none; }
+.tc li { font-size: 0.82rem; color: var(--ink); padding: 0.2rem 0; border-bottom: 1px solid var(--border); font-weight: 300; }
+.tc li:last-child { border-bottom: none; }
+
+/* ── CONTACT ── */
+#contact { background: var(--ink); padding: 7rem 3rem; text-align: center; }
+#contact .eyebrow { color: var(--accent2); justify-content: center; }
+#contact .eyebrow::before { background: var(--accent2); }
+#contact h2.sh { color: var(--cream); max-width: 500px; margin: 0 auto 1rem; }
+#contact .sub { color: #7c7870; margin: 0 auto 2.5rem; text-align: center; }
+.c-row { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.c-link {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  text-decoration: none; font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  padding: 0.6rem 1.3rem; border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px; transition: all 0.2s; font-weight: 400;
+}
+.c-link:hover { border-color: var(--accent2); color: var(--accent2); }
+.loc { margin-top: 2rem; font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 1.3rem 3rem; text-align: center; background: var(--ink); font-size: 0.76rem; color: rgba(255,255,255,0.25); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 920px) {
+  #home { grid-template-columns: 1fr; padding-top: 8rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .approach-grid, .ai-grid, .proof-inner, .proof-gallery-grid { grid-template-columns: 1fr; }
+  .tool-cats { grid-template-columns: 1fr 1fr; }
+  .cbg { grid-template-columns: 1fr; }
+  nav { padding: 1rem 1.5rem; }
+  nav ul { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#home">Anthonia Arkorful</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#cases">Work</a></li>
+    <li><a href="#proof">Testimonials</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="home">
+  <div class="reveal">
+    <div class="hero-eyebrow">Digital Project Manager · Agency &amp; Tech</div>
+    <div style="font-weight:600; margin-bottom:0.5rem; font-size:0.9rem;">Anthonia Arkorful</div>
+    <h1 class="hero-h1">
+      I bring structure, clarity, and follow-through to <em>complex</em> digital projects.
+    </h1>
+    <p class="hero-para">
+      Eight years of coordinating designers, developers, clients, and stakeholders across agency, technology, media, and healthcare environments. I manage the communication, systems, and clarity that sit between a brief and a finished deliverable.
+    </p>
+    <div class="ai-badge">AI-forward PM — I integrate AI tools into project workflows</div>
+    <div class="hero-cta">
+      <a href="#cases" class="btn btn-fill">View Case Studies</a>
+      <a href="https://drive.google.com/drive/folders/13oOHWiOma_J1evmjKLr26p-GDpEZmTnp?usp=drive_link" class="btn btn-ghost" target="_blank">Proof of Work (Trackers, SOPs, Templates) ↗</a>
+    </div>
+  </div>
+
+  <div class="hero-right reveal">
+    <div class="hero-photo-wrap">
+      <img src="profile.jpg" alt="Anthonia Arkorful" />
+      <div class="photo-badge">
+        <div class="pb-quote">"I just audited her boards and had NO EDITS. One of the biggest levelling ups in Project Management I've seen in a long time."</div>
+        <div class="pb-attr">Becca Kingsbury · Manager, Dingus &amp; Zazzy</div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-card ac">
+        <div class="sn">8+</div>
+        <div class="sl">Years across agency, tech, media &amp; healthcare</div>
+      </div>
+      <div class="stat-card">
+        <div class="sn">50+</div>
+        <div class="sl">Projects managed across a single agency engagement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<div id="about" style="background: var(--cream);">
+<div class="wrap-bg">
+<div class="inner">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="eyebrow">About Me</div>
+      <h2 class="sh">I manage the layer most people underestimate.</h2>
+      <div class="about-body">
+        <p>I am a Digital Project Manager with over eight years of experience spanning agency, technology, media, healthcare, and consulting environments. I specialise in the coordination layer of digital projects: the communication, workflows, and decision-making that sit between a client's brief and a team's delivery.</p>
+        <p><strong>I am not limited to agency work.</strong> I am equally comfortable managing technology product sprints, marketing campaigns, website builds, and cross-functional digital initiatives. Wherever there are stakeholders to align, timelines to manage, and deliverables to ship, I can lead the work.</p>
+        <p>The biggest project risks are rarely technical. They are communication gaps, unclear ownership, and feedback that disappears into conversations. I fix those things by building systems that give everyone visibility, running meetings that produce clear actions, and ensuring delivery does not stall between handoffs.</p>
+        <div class="ai-section">
+          <div class="ai-label">✦ AI-Forward Working Practice</div>
+          <p>I actively integrate AI tools into my project management practice — using them to speed up documentation, structure meeting notes, draft briefs, and improve my own workflow efficiency. I am building fluency in how AI can support project delivery, not just as a user but as a practitioner who can help teams adopt these tools thoughtfully.</p>
+        </div>
+        <div class="creds">
+          <strong>Certifications &amp; Education</strong><br>
+          PMP (In Progress) &nbsp;·&nbsp; Google Digital Marketing &amp; E-Commerce Certificate (2024)<br>
+          CIM UK Professional Certificate in Marketing (2022) &nbsp;·&nbsp; B.A. Information Studies &amp; Theatre Arts, University of Ghana, 2017
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow" style="margin-top:0.2rem;">Working Style</div>
+      <div class="sg">
+        <div class="sc"><div class="ico">🗂</div><h4>Organized by Default</h4><p>I build tracking systems before problems arise, not after they do.</p></div>
+        <div class="sc"><div class="ico">🤝</div><h4>Clear Communicator</h4><p>I translate feedback into specific tasks and updates into language stakeholders understand.</p></div>
+        <div class="sc"><div class="ico">🧩</div><h4>Cross-Functional</h4><p>I coordinate designers, developers, writers, and strategists without losing the thread of any one.</p></div>
+        <div class="sc"><div class="ico">⚖️</div><h4>Calm Under Pressure</h4><p>When things shift — and they always do — I focus on solutions, not the noise around them.</p></div>
+        <div class="sc"><div class="ico">🌍</div><h4>Remote-Ready</h4><p>Structured async habits, clear documentation, and reliable communication across time zones.</p></div>
+        <div class="sc"><div class="ico">✦</div><h4>AI-Informed</h4><p>I bring AI tools into workflows where they genuinely improve speed and quality of delivery.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ── CASE STUDIES ── -->
+<div id="cases">
+<div class="wrap">
+  <div class="eyebrow reveal">Case Studies</div>
+  <h2 class="sh reveal">Selected Projects</h2>
+  <p class="sub reveal">Five real projects across agency and digital environments. What I did, what I decided, and what happened. Click any card to expand.</p>
+
+  <div class="case-list">
+
+    <!-- 01 -->
+    <div class="case-card reveal">
+      <div class="case-header" onclick="toggleCase(this)">
+        <div class="cnum">01</div>
+        <div>
+          <div class="ctag">Website Migration · Remote Agency</div>
+          <h3>PHP to WordPress Migration</h3>
+          <div class="case-org">Dingus &amp; Zazzy · Canada (EST) · Feb–Dec 2023</div>
+          <p class="case-preview">Coordinated a full website rebuild for a technology company — managing designers, developers, and the client within a structured remote-first workflow, using Basecamp and a custom Excel tracker I built to keep 15+ pages on track.</p>
+        </div>
+        <div class="ticon">+</div>
+      </div>
+      <div class="case-body">
+        <div class="cbg">
+          <div class="cb">
+            <h5>Context</h5>
+            <p>A technology company needed to migrate their website from a legacy PHP platform to WordPress, with a simultaneous brand refresh and social media rollout. I was the Project Manager embedded in the agency, working in EST hours with a distributed team.</p>
+          </div>
+          <div class="cb">
+            <h5>The Challenge</h5>
+            <p>With 15+ pages in flight at different stages, and client feedback arriving across email and calls, there was no single system to show where each page stood. Without one, content would move to development in the wrong state, or sit waiting without anyone realising.</p>
+          </div>
+          <div class="cb full">
+            <h5>What I Did</h5>
+            <ul>
+              <li>Built a custom Excel tracker covering every page: wireframe status, design approval, client sign-off, development stage, QA status, and go-live readiness — all in one view.</li>
+              <li>Established a clear page-by-page approval workflow so that nothing moved to development without PM and client sign-off.</li>
+              <li>Managed the client relationship as the primary point of contact — translating feedback into specific briefs and returning revised work with a clear change summary each time.</li>
+              <li>Coordinated designers and developers through Basecamp, maintaining task visibility and tracking outstanding items against the project timeline.</li>
+              <li>Monitored dependencies and flagged blockers before they became delays.</li>
+            </ul>
+            <div class="jbox">
+              <div class="jl">My Judgment Call</div>
+              <p>Midway through the project, the client requested a significant scope addition — a careers section and case study CMS — not in the original brief. Rather than absorbing it quietly, I named it as a scope change, outlined the time implications, and proposed a phased approach. The careers section moved to Phase 2. That one conversation protected the delivery timeline without damaging the client relationship.</p>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Tools Used</h5>
+            <div class="chips">
+              <span class="chip">Excel (custom tracker)</span>
+              <span class="chip">Basecamp</span>
+              <span class="chip">Google Workspace</span>
+              <span class="chip">Email / Stakeholder comms</span>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Outcome</h5>
+            <p>The migration was delivered on schedule. The tracker became the team's single source of truth. The brand refresh and social rollout were completed within the same engagement. After the project, my manager publicly recognised it as one of the biggest PM levelling-ups she had seen — with zero edits needed on a board audit.</p>
+          </div>
+          <div class="cb full">
+            <h5>Evidence</h5>
+            <div class="ev-links">
+              <a class="ev-link" href="https://drive.google.com/drive/folders/13oOHWiOma_J1evmjKLr26p-GDpEZmTnp?usp=drive_link" target="_blank">📁 View Proof of Work Library</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="case-card reveal">
+      <div class="case-header" onclick="toggleCase(this)">
+        <div class="cnum">02</div>
+        <div>
+          <div class="ctag">Multi-Brand Social Media · Agency PM</div>
+          <h3>Running 4 Automotive Brand Accounts Simultaneously</h3>
+          <div class="case-org">Global Media Alliance · Accra, Ghana · 2025</div>
+          <p class="case-preview">Managed concurrent content delivery for Nissan, Foton, Geely, and INEOS — each with separate calendars, approval cycles, and client contacts — without a missed publish deadline.</p>
+        </div>
+        <div class="ticon">+</div>
+      </div>
+      <div class="case-body">
+        <div class="cbg">
+          <div class="cb">
+            <h5>Context</h5>
+            <p>GMA managed social media for four automotive brands simultaneously. Each required three posts per week across multiple platforms, with distinct brand voices, separate client contacts, and independent approval processes.</p>
+          </div>
+          <div class="cb">
+            <h5>The Challenge</h5>
+            <p>Four brands running in parallel means four content calendars, four sets of client expectations, and four revision cycles overlapping every week. Without a structured system, content piles up, approvals slip, and something gets published without the right sign-off.</p>
+          </div>
+          <div class="cb full">
+            <h5>What I Did</h5>
+            <ul>
+              <li>Built a monthly content calendar for each brand, structured around weekly themes, platform requirements, and client-specific brand guidelines.</li>
+              <li>Briefed copywriters and designers per brand per content cycle, with clear tone direction, visual reference, and objectives each time.</li>
+              <li>Managed staggered submission windows so client approvals across the four accounts were never requested at the same time, preventing bottlenecks.</li>
+              <li>Logged all client feedback centrally, assigned revisions within two hours of receipt, and confirmed resolution before the next cycle began.</li>
+              <li>Maintained a publishing record — every post screenshot and saved to the respective client folder on the day of publish.</li>
+            </ul>
+            <div class="jbox">
+              <div class="jl">My Judgment Call</div>
+              <p>One client was consistently submitting feedback less than 24 hours before publish. Rather than escalating it as a client problem, I recognised it as a system problem: my submission window was too short. I restructured the calendar to build in a 72-hour client review buffer on every brand. That change eliminated late-stage scrambles across all four accounts, not just the one triggering it.</p>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Tools Used</h5>
+            <div class="chips">
+              <span class="chip">Google Sheets (content calendar)</span>
+              <span class="chip">Asana</span>
+              <span class="chip">Canva</span>
+              <span class="chip">Google Workspace</span>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Outcome</h5>
+            <p>All four brands maintained a consistent publishing cadence. The structured approval process reduced last-minute revision requests and gave clients clear visibility into the content pipeline ahead of time.</p>
+          </div>
+          <div class="cb full">
+            <h5>Evidence</h5>
+            <div class="ev-links">
+              <a class="ev-link" href="https://drive.google.com/drive/folders/13oOHWiOma_J1evmjKLr26p-GDpEZmTnp?usp=drive_link" target="_blank">📁 View Proof of Work Library</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="case-card reveal">
+      <div class="case-header" onclick="toggleCase(this)">
+        <div class="cnum">03</div>
+        <div>
+          <div class="ctag">Client Communication · Issue Resolution</div>
+          <h3>Recovering a Client Relationship Mid-Project</h3>
+          <div class="case-org">Global Media Alliance · Accra, Ghana · 2025</div>
+          <p class="case-preview">A client flagged dissatisfaction with content direction. I identified the root cause as a process failure, not a quality failure, and redesigned the communication workflow for the account.</p>
+        </div>
+        <div class="ticon">+</div>
+      </div>
+      <div class="case-body">
+        <div class="cbg">
+          <div class="cb">
+            <h5>Context</h5>
+            <p>A client account became strained when delivered content consistently missed the mark in tone. Feedback was being received across informal channels but not properly captured or translated into clear direction for the team.</p>
+          </div>
+          <div class="cb">
+            <h5>The Challenge</h5>
+            <p>The surface problem looked like content quality. The real problem was that informal, unstructured feedback was reaching the team in a diluted form. The team was working hard with the wrong brief.</p>
+          </div>
+          <div class="cb full">
+            <h5>What I Did</h5>
+            <ul>
+              <li>Requested a direct meeting with the client — not to defend the work, but to listen. Came with a structured agenda and took detailed notes.</li>
+              <li>Produced a written brief after the meeting capturing the client's expectations in plain language, shared with both the client and the internal team for confirmation.</li>
+              <li>Introduced standing meeting agendas for all future calls: purpose, status, feedback, and next steps documented every time.</li>
+              <li>Created a feedback capture process so all input arrived in writing and was assigned to a named team member within 24 hours.</li>
+              <li>Added a pre-submission PM review step — nothing went to the client without being checked against the confirmed brief first.</li>
+            </ul>
+            <div class="jbox">
+              <div class="jl">My Judgment Call</div>
+              <p>The instinct in that situation is to apologise and promise to do better. I did not do that. I diagnosed the process failure, named it clearly to both the client and the team, and proposed a structural fix. Naming the problem honestly — rather than managing around it — is what rebuilt trust quickly. The client needed to know someone understood what had gone wrong, not just that someone was sorry.</p>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Tools Used</h5>
+            <div class="chips">
+              <span class="chip">Google Docs (brief &amp; agendas)</span>
+              <span class="chip">Google Sheets (feedback log)</span>
+              <span class="chip">Zoom</span>
+              <span class="chip">Google Workspace</span>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Outcome</h5>
+            <p>The account stabilised within two content cycles. The feedback framework introduced was adopted across other client accounts at the agency. No further escalation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="case-card reveal">
+      <div class="case-header" onclick="toggleCase(this)">
+        <div class="cnum">04</div>
+        <div>
+          <div class="ctag">Event Coordination · Stakeholder Management</div>
+          <h3>Fertility Society of Ghana Congress</h3>
+          <div class="case-org">Lister Hospital &amp; Fertility Centre · Accra, Ghana · 2019–2023</div>
+          <p class="case-preview">Coordinated a large-scale institutional healthcare congress involving medical bodies, sponsors, vendors, and internal teams — from planning through execution.</p>
+        </div>
+        <div class="ticon">+</div>
+      </div>
+      <div class="case-body">
+        <div class="cbg">
+          <div class="cb">
+            <h5>Context</h5>
+            <p>As Business Development Officer, I led coordination for the annual Fertility Society of Ghana Congress — a high-profile event involving medical professionals, sponsors, institutional healthcare partners, and public attendees.</p>
+          </div>
+          <div class="cb">
+            <h5>The Challenge</h5>
+            <p>Events of this scale involve contributors with different agendas, timelines, and communication styles. Without a dedicated event management structure, I had to build one — and keep sponsors, vendors, and internal teams accountable across a multi-month planning period.</p>
+          </div>
+          <div class="cb full">
+            <h5>What I Did</h5>
+            <ul>
+              <li>Created a master task list with clear ownership and deadlines across all internal and external contributors from the start of the planning cycle.</li>
+              <li>Managed sponsor communication from initial agreements through to on-site acknowledgements, ensuring commitments were documented on both sides.</li>
+              <li>Coordinated all marketing collateral — briefing designers, setting print timelines, and ensuring materials were ready and on-brand ahead of the event.</li>
+              <li>Served as primary contact for vendors and external partners throughout the planning period.</li>
+              <li>Ran weekly status check-ins in the lead-up to the event, working through the outstanding task list and escalating anything at risk.</li>
+            </ul>
+            <div class="jbox">
+              <div class="jl">My Judgment Call</div>
+              <p>A key sponsor delayed confirming their contribution level until two weeks before the event, holding up signage and print decisions. Rather than waiting further, I worked with the design team to prepare two versions of the signage in parallel — one with the sponsor featured, one without. When the sponsor confirmed, we had a ready-to-go file. The event printed on time. Preparing for a decision, rather than waiting for it, was the right call.</p>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Tools Used</h5>
+            <div class="chips">
+              <span class="chip">Excel (master task tracker)</span>
+              <span class="chip">Google Workspace</span>
+              <span class="chip">Email / Stakeholder comms</span>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Outcome</h5>
+            <p>The congress was delivered successfully. Sponsor and partner relationships were maintained professionally throughout. Lister Hospital strengthened its standing within the medical community as a result.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="case-card reveal">
+      <div class="case-header" onclick="toggleCase(this)">
+        <div class="cnum">05</div>
+        <div>
+          <div class="ctag">Process Design · SOP Development</div>
+          <h3>Building a Content Submission SOP Adopted Agency-Wide</h3>
+          <div class="case-org">Global Media Alliance · Accra, Ghana · 2025</div>
+          <p class="case-preview">Identified a recurring process gap in content review and submission across client accounts, and designed a Standard Operating Procedure that was adopted across the agency.</p>
+        </div>
+        <div class="ticon">+</div>
+      </div>
+      <div class="case-body">
+        <div class="cbg">
+          <div class="cb">
+            <h5>Context</h5>
+            <p>After resolving a client communication issue, I identified the same vulnerability across other accounts: content was being reviewed inconsistently, submission timelines varied, and there was no standard for how client approvals were captured and confirmed.</p>
+          </div>
+          <div class="cb">
+            <h5>The Challenge</h5>
+            <p>Without a shared standard, every account manager ran their own version of the workflow. That produced inconsistent client experiences and meant one person's informal habits could create a problem at any time.</p>
+          </div>
+          <div class="cb full">
+            <h5>What I Did</h5>
+            <ul>
+              <li>Mapped the existing content process from brief to publish, identifying every gap: no PM review step, no standard submission timeline, no written approval requirement, no revision escalation rule.</li>
+              <li>Designed a nine-step SOP: content creation, internal PM review, client submission, feedback capture, revision, re-submission, final approval, publishing, and post-publish QA.</li>
+              <li>Built in non-negotiable rules: content submitted 72 hours before publish, all approvals in writing, more than two revision rounds triggers a scope flag.</li>
+              <li>Documented the SOP in a shared format and walked the team through it in a structured session.</li>
+            </ul>
+            <div class="jbox">
+              <div class="jl">My Judgment Call</div>
+              <p>I made the SOP tight enough to be consistent but left room for account managers to adapt it to specific client relationships. A process people do not follow is not a process. The rules I made non-negotiable were the ones that directly affected client trust: written approvals, 72-hour buffers, and revision limits. Everything else had flexibility built in.</p>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Tools Used</h5>
+            <div class="chips">
+              <span class="chip">Excel (SOP document)</span>
+              <span class="chip">Google Docs</span>
+              <span class="chip">Google Workspace</span>
+            </div>
+          </div>
+          <div class="cb">
+            <h5>Outcome</h5>
+            <p>The SOP was adopted across the agency's client accounts. It reduced late-stage revision requests and gave the team a consistent baseline for managing all client relationships.</p>
+          </div>
+          <div class="cb full">
+            <h5>Evidence</h5>
+            <div class="ev-links">
+              <a class="ev-link" href="https://drive.google.com/drive/folders/13oOHWiOma_J1evmjKLr26p-GDpEZmTnp?usp=drive_link" target="_blank">📁 View Proof of Work Library</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ── TESTIMONIALS ── -->
+<div id="proof">
+<div class="proof-strip">
+  <div class="proof-inner">
+
+    <div class="proof-card reveal">
+      <blockquote>Anthonia is truly one of a kind. Her qualities are rare, and any institution she works with gains a very valuable gem. She approaches every task with intention, commitment, and a strong sense of ownership — ensuring that everything she is responsible for is not just completed, but done well. What stands out most is her persistence and drive. She does not give up easily and will keep going until she achieves the outcome she is aiming for. She is dependable, driven, and consistently delivers value.</blockquote>
+      <div class="proof-attr">Mrs. Nana Beecham<span>Mentor</span></div>
+    </div>
+
+    <div class="proof-card reveal">
+      <blockquote>Anthonia genuinely believes she can achieve anything she sets her mind to, and she backs that belief with action and results. I trust her to approach any challenge — no matter how complex — with a solutions-oriented mindset. She does not get overwhelmed by problems; she focuses on finding a way forward and ensuring things are handled effectively. She has been consistent, reliable, and resourceful in her work.</blockquote>
+      <div class="proof-attr">Mrs. Afua Dadzie<span>Lister Hospital &amp; Fertility Centre</span></div>
+    </div>
+
+    <div class="social-proof-img reveal" style="grid-column: 1 / -1;">
+      <img src="becca-testimonial.jpeg" alt="Team recognition from Becca Kingsbury, Manager at Dingus & Zazzy, calling out Anthonia's project management work" />
+      <div class="img-label">✦ Peer recognition from Becca Kingsbury, Manager — Dingus &amp; Zazzy. Shared in team channel after a zero-edit board audit.</div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<!-- ── PROOF GALLERY ── -->
+<div id="proof-gallery">
+<div class="wrap">
+  <div class="eyebrow reveal">Proof of Work</div>
+  <h2 class="sh reveal">A few systems I built and used</h2>
+  <p class="sub reveal">For recruiters who want to see how I organise work, not just read about it. These are screenshots of real-style trackers and process documentation included in my proof-of-work library.</p>
+
+  <div class="proof-gallery-grid">
+    <div class="proof-shot reveal">
+      <img src="content-calendar-1.png" alt="Screenshot of a social media content calendar tracker" />
+      <div class="proof-shot-body">
+        <h4>Social Media Content Calendar</h4>
+        <p>A structured publishing tracker showing content theme, caption draft, visual brief, asset status, client approval, revision notes, and final status across multiple automotive brands.</p>
+        <span class="proof-shot-meta">Content Operations</span>
+      </div>
+    </div>
+
+    <div class="proof-shot reveal">
+      <img src="migration-tracker.png" alt="Screenshot of a website migration tracker" />
+      <div class="proof-shot-body">
+        <h4>Website Migration Tracker</h4>
+        <p>A page-by-page project tracker used to manage wireframes, design approvals, development status, QA, go-live readiness, and revision notes during a PHP-to-WordPress migration.</p>
+        <span class="proof-shot-meta">Website Delivery</span>
+      </div>
+    </div>
+
+    <div class="proof-shot reveal">
+      <img src="content-calendar-2.png" alt="Second screenshot of a social media content calendar" />
+      <div class="proof-shot-body">
+        <h4>Multi-Brand Review Workflow</h4>
+        <p>A closer look at how content status, approvals, and accountability were tracked so that multiple brands could move in parallel without missed handoffs or unclear ownership.</p>
+        <span class="proof-shot-meta">Approval Workflow</span>
+      </div>
+    </div>
+
+    <div class="proof-shot reveal">
+      <img src="sop-preview.png" alt="Screenshot of a standard operating procedure document for content review and client submission" />
+      <div class="proof-shot-body">
+        <h4>Content Review &amp; Submission SOP</h4>
+        <p>A documented process covering internal PM review, client submission, feedback capture, revision rules, final approval, publishing confirmation, and post-publish QA.</p>
+        <span class="proof-shot-meta">Process Design</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="proof-cta-row reveal">
+    <a href="https://drive.google.com/drive/folders/13oOHWiOma_J1evmjKLr26p-GDpEZmTnp?usp=drive_link" class="btn btn-fill" target="_blank">Open Proof of Work Library</a>
+    <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+  </div>
+</div>
+</div>
+
+<!-- ── AI FORWARD ── -->
+<div id="ai-section">
+<div class="inner">
+  <div class="ai-grid">
+    <div class="ai-left reveal">
+      <div class="eyebrow">AI-Forward Practice</div>
+      <h2 class="sh">I bring AI into how I work, not just what I produce.</h2>
+      <p>AI is changing how projects get planned, documented, and delivered. I am not waiting to be told how to use it — I am already doing it, and I am interested in roles where that matters.</p>
+      <p>I use AI tools to make my project management sharper: faster documentation, better-structured briefs, smarter prep for client meetings, and more consistent outputs. I also think carefully about where AI adds genuine value versus where it creates noise — that judgment is part of the skill.</p>
+      <p>I am comfortable working in AI-forward environments, and I can help teams who are figuring out how to integrate AI tools into their own project workflows.</p>
+    </div>
+    <div class="ai-tools reveal">
+      <div class="ai-tool">
+        <div class="at-icon">📝</div>
+        <div>
+          <h5>Meeting Documentation</h5>
+          <p>Using AI to produce structured meeting summaries and action logs faster — so client records are accurate and complete without taking time away from the conversation.</p>
+        </div>
+      </div>
+      <div class="ai-tool">
+        <div class="at-icon">📋</div>
+        <div>
+          <h5>Brief &amp; SOP Drafting</h5>
+          <p>Using AI to speed up the first draft of creative briefs, SOPs, and status reports — then editing for accuracy and context rather than starting from blank.</p>
+        </div>
+      </div>
+      <div class="ai-tool">
+        <div class="at-icon">🔍</div>
+        <div>
+          <h5>Research &amp; Prep</h5>
+          <p>Using AI to research client industries, benchmark approaches, and prepare for stakeholder conversations more efficiently than manual research alone.</p>
+        </div>
+      </div>
+      <div class="ai-tool">
+        <div class="at-icon">⚙️</div>
+        <div>
+          <h5>Workflow Thinking</h5>
+          <p>Exploring how AI tools can reduce manual steps in content approval and status reporting workflows — with a focus on what is genuinely useful, not what is just new.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── APPROACH ── -->
+<div id="approach">
+<div class="wrap-bg" style="background: var(--cream);">
+<div class="inner">
+  <div class="eyebrow reveal">How I Work</div>
+  <h2 class="sh reveal">My Approach to Project Delivery</h2>
+  <p class="sub reveal">The same logic applies whether I am managing a content calendar, a website build, or a cross-functional product initiative.</p>
+  <div class="approach-grid">
+    <div class="a-card reveal"><div class="a-num">01</div><h4>Scope Before Start</h4><p>Everyone aligned on deliverables, timelines, and ownership before a single asset is created. Ambiguity at the start becomes a dispute at the end.</p></div>
+    <div class="a-card reveal"><div class="a-num">02</div><h4>Build the Right System</h4><p>Trackers and workflows matched to the project's complexity. Not everything needs Jira. Not everything survives in an email thread.</p></div>
+    <div class="a-card reveal"><div class="a-num">03</div><h4>Structured Client Comms</h4><p>Every client interaction has an agenda. Every decision is documented. Every piece of feedback captured in writing and actioned within 24 hours.</p></div>
+    <div class="a-card reveal"><div class="a-num">04</div><h4>Flag Risks Early</h4><p>Blockers raised immediately — with options, not just the problem. No surprises at deadline.</p></div>
+    <div class="a-card reveal"><div class="a-num">05</div><h4>Keep Teams Moving</h4><p>Designers, developers, and writers should always know what is expected without having to ask. Clear ownership, specific briefs, regular check-ins.</p></div>
+    <div class="a-card reveal"><div class="a-num">06</div><h4>Review Before Sending</h4><p>Every deliverable checked against the original brief before it reaches a client. Not to duplicate the specialist — to protect the relationship.</p></div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ── TOOLS ── -->
+<div id="tools">
+<div class="wrap">
+  <div class="eyebrow reveal">Tools &amp; Systems</div>
+  <h2 class="sh reveal">What I Work With</h2>
+  <p style="color:var(--muted); font-weight:300; font-size:0.93rem; max-width:500px; margin-bottom:2rem;" class="reveal">Tool-flexible and quick to learn. The system matters more than the software.</p>
+  <div class="tool-cats reveal">
+    <div class="tc"><h5>Project Management</h5><ul><li>Asana</li><li>Trello</li><li>Jira</li><li>Basecamp</li><li>Notion</li></ul></div>
+    <div class="tc"><h5>Tracking &amp; Reporting</h5><ul><li>Excel (advanced)</li><li>Google Sheets</li><li>Google Analytics</li><li>Google Data Studio</li></ul></div>
+    <div class="tc"><h5>Collaboration</h5><ul><li>Google Workspace</li><li>Slack</li><li>Zoom</li><li>Microsoft Teams</li></ul></div>
+    <div class="tc"><h5>Creative &amp; CRM</h5><ul><li>Canva</li><li>Figma (review)</li><li>Salesforce</li><li>HubSpot</li><li>Zoho CRM</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="eyebrow">Contact</div>
+  <h2 class="sh">Open to Remote Digital PM Roles</h2>
+  <p class="sub">I am actively looking for remote Digital Project Manager positions across agency, technology, and marketing environments. If you are building a team that needs structured delivery and clear communication, I would like to hear from you.</p>
+  <div class="c-row">
+    <a class="c-link" href="mailto:anthoniaarkorful@gmail.com">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      anthoniaarkorful@gmail.com
+    </a>
+    <a class="c-link" href="https://linkedin.com/in/anthoniaarkorful" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      linkedin.com/in/anthoniaarkorful
+    </a>
+    <a class="c-link" href="tel:+233546114884">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +233 546 114 884
+    </a>
+    <a class="c-link" href="https://drive.google.com/drive/folders/13oOHWiOma_J1evmjKLr26p-GDpEZmTnp?usp=drive_link" target="_blank">
+      📁 Proof of Work
+    </a>
+  </div>
+  <p class="loc">Based in Accra, Ghana &nbsp;·&nbsp; Available for remote and global roles</p>
+</section>
+
+<footer>&copy; 2025 Anthonia Arkorful &nbsp;·&nbsp; Digital Project Manager</footer>
+
+<script>
+function toggleCase(header) {
+  header.closest('.case-card').classList.toggle('open');
+}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
